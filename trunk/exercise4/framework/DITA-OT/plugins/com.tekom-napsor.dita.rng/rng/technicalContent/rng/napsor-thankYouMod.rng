@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="urn:oasis:names:tc:dita:rng:vocabularyModuleDesc.rng"
+                         schematypens="http://relaxng.org/ns/structure/1.0"?>
+<grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:dita="http://dita.oasis-open.org/architecture/2005/" xmlns="http://relaxng.org/ns/structure/1.0">
+	<moduleDesc xmlns="http://dita.oasis-open.org/architecture/2005/">
+		<moduleTitle>DITA Highlight Domain</moduleTitle>
+		<headerComment>
+MODULE: DITA Highlight Domain VERSION: 1.2 DATE:
+November 2009 
+
+SYSTEM: Darwin Information Typing Architecture (DITA)
+PURPOSE: Define elements and specialization attributes for Highlight Domain 
+
+ORIGINAL CREATION DATE: March 2001 
+
+(C) Copyright OASIS Open 2005, 2009. 
+(C) Copyright IBM Corporation 2001, 2004. All Rights Reserved.
+
+UPDATES: 
+2005.11.15 RDA: Corrected descriptive names for all elements except bold 
+2005.11.15 RDA: Corrected the "Delivered as" system ID 
+2007.12.01 WEK: Reformatted DTD modulesfor DITA 1.2  
+2008.02.13 RDA: Create .content and .attributes entities 
+      </headerComment>
+		<moduleMetadata>
+			<moduleType>elementdomain</moduleType>
+			<moduleShortName>napsor-thankYouMod-d</moduleShortName>
+			<modulePublicIds>
+				<dtdMod>-//OASIS//ELEMENTS DITA<var presep=" " name="ditaver" /> Highlight Domain//EN</dtdMod>
+				<dtdEnt>-//OASIS//ENTITIES DITA<var presep=" " name="ditaver" /> Highlight Domain//EN</dtdEnt>
+				<xsdMod>urn:oasis:names:tc:dita:xsd:highlightDomain.xsd<var presep=":" name="ditaver" /></xsdMod>
+				<rncMod>urn:oasis:names:tc:dita:rnc:highlightDomain.rnc<var presep=":" name="ditaver" /></rncMod>
+				<rngMod>urn:napsor:dita:rng:napsor-thankYouMod.rng<var presep=":" name="ditaver" /></rngMod>
+			</modulePublicIds>
+			<domainsContribution>(topic hi-d napsor-thankYouMod-d)</domainsContribution>
+		</moduleMetadata>
+	</moduleDesc>
+
+	<div>
+		<a:documentation>DOMAIN EXTENSION PATTERNS</a:documentation>
+
+		<define name="thankyou-d-ph">
+			<ref name="thankyou.element" />
+		</define>
+
+		<define name="ph" combine="choice">
+			<ref name="thankyou-d-ph" />
+		</define>
+	</div>
+
+	<div>
+		<a:documentation>ELEMENT TYPE DECLARATIONS</a:documentation>
+
+		<define name="thankyou">
+			<ref name="thankyou.element" />
+		</define>
+
+		<define name="thankyou.element">
+			<element name="thankyou" dita:longName="Thank you">
+				<ref name="thankyou.attlist" />
+				<ref name="thankyou.content" />
+			</element>
+		</define>
+
+		<define name="thankyou.content">
+			<text />
+		</define>
+
+		<define name="thankyou.attlist" combine="interleave">
+			<ref name="thankyou.attributes" />
+		</define>
+
+		<define name="thankyou.attributes">
+			<ref name="univ-atts" />
+			<optional>
+				<attribute name="outputclass" />
+			</optional>
+
+			<ref name="global-atts" />
+			<optional>
+				<attribute name="class" a:defaultValue="+ topic/ph thankyou-d/thankyou " />
+			</optional>
+		</define>
+
+
+
+	</div>
+
+</grammar>
